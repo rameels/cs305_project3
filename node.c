@@ -50,7 +50,7 @@ void node_init(int matrix_row[], int n, struct node *a_node) {
 }
 
 void recv_update(struct node *a_node, struct rtpkt *rcvdpkt) {
-
+    print_recv_update(rcvdpkt);
 }
 
 void link_change_handler(struct node *a_node, int linkid, int newcost) {
@@ -113,8 +113,10 @@ void print_node_init(int n) {
            clocktime, n);
 }
 
-void print_recv_update(struct node *a_node) {
-
+void print_recv_update(struct rtpkt *rcvdpkt) {
+    printf("\nAt time t=%.3f, recv_update() called. ", clocktime); 
+    printf("node %d receives a packet from node %d\n",
+           rcvdpkt->destid, rcvdpkt->sourceid);
 }
 
 void print_link_change_handler(struct node *a_node) {

@@ -55,8 +55,8 @@ void node_init(int matrix_row[], int n, struct node *a_node);
    See project description for more information. */
 void recv_update(struct node *a_node, struct rtpkt *rcvdpkt);
 
-/* this function is called when you have scheduled a link change. See project 
-   description for more information. */
+/* this function is called when you have scheduled a link change. See 
+   project description for more information. */
 void link_change_handler(struct node *a_node, int linkid, int newcost);
 
 /* this function is provided for you and you do not need to alter it. See 
@@ -70,7 +70,7 @@ void print_node_state(struct node *a_node);
 void print_node_init(int n);
 
 /* prints out time, destination and source of recv_update() call */
-void print_recv_update(struct node *a_node);
+void print_recv_update(struct rtpkt *rcvdpkt);
 
 /* prints out time, nodes and new cost of link_change_handler() call */
 void print_link_change_handler(struct node *a_node);
