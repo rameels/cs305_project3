@@ -49,16 +49,31 @@ struct node {
 /* This function is called once in the beginning of the program and should 
    initialize all the necessary fields. See project description for more 
    information. */ 
-void node_init(int matrix_row[], int n, struct node * a_node);
+void node_init(int matrix_row[], int n, struct node *a_node);
 
 /* This function is called when a node receives an update from a neighbor. 
    See project description for more information. */
-void recv_update(struct node * a_node, struct rtpkt *rcvdpkt);
+void recv_update(struct node *a_node, struct rtpkt *rcvdpkt);
 
 /* this function is called when you have scheduled a link change. See project 
    description for more information. */
-void link_change_handler(struct node * a_node, int linkid, int newcost);
+void link_change_handler(struct node *a_node, int linkid, int newcost);
 
 /* this function is provided for you and you do not need to alter it. See 
    project description for more information. */
 void tolayer2(struct rtpkt packet);
+
+/* prints out the node's distance table and next hop tables */
+void print_node_state(struct node *a_node);
+
+/* prints out time and node of node_init() call */
+void print_node_init(int n);
+
+/* prints out time, destination and source of recv_update() call */
+void print_recv_update(struct node *a_node);
+
+/* prints out time, nodes and new cost of link_change_handler() call */
+void print_link_change_handler(struct node *a_node);
+
+/* prints out source, destination and distance vector of tolayer2() call */
+void print_tolayer2(struct rtpkt pkt);
