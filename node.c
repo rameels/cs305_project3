@@ -24,7 +24,7 @@ void node_init(int matrix_row[], int n, struct node *a_node) {
     		}
     		else {
     			a_node->distance_table[i][j] = INFINITY;
-    		}
+    		} 
         }
         a_node->cost_to_neighbors[i] = matrix_row[i];
         if(i == n) {
@@ -50,7 +50,45 @@ void node_init(int matrix_row[], int n, struct node *a_node) {
 }
 
 void recv_update(struct node *a_node, struct rtpkt *rcvdpkt) {
+    int i, j;
+    int change = 0;
+    struct rtpkt pkt;
     print_recv_update(rcvdpkt);
+    for(i = 0; i < NUMOFNODES; i++) {
+        a_node->distance_table[rcvdpkt->sourceid][i] = 
+        rcvdpkt->mincost[i];
+    }
+    for(i = 0; i < NUMOFNODES; i++) {
+        for(j = 0; j < NUMOFNODES; j++) {
+            if((a_node->distance_table[a_node->node_number][j] +
+               a_node->distance_table[j][i] <
+               a_node->distance_table[a_node->node_number][i]) &&
+               a_node->distance_table[a_node->node_number][j] !=
+               INFINITY && 
+               a_node->distance_table[j][i] != INFINITY) {
+                a_node->distance_table[a_node->node_number][i] =
+                a_node->distance_table[a_node->node_number][j] +
+                a_node->distance_table[j][i];
+                change = 1;
+            }
+        }
+    }
+    if(change) {
+        pkt.sourceid = a_node->node_number;
+        for(i = 0; i < NUMOFNODES; i++) {
+            pkt.mincost[i] = 
+            a_node->distance_table[a_node->node_number][i];
+        }
+        for(i = 0; i < NUMOFNODES; i++) {    
+            pkt.destid = i;
+            if(i != a_node->node_number && 
+                a_node->cost_to_neighbors[i] != INFINITY) {
+                print_tolayer2(pkt);
+                tolayer2(pkt);
+            }
+        }
+    }
+    print_node_state(a_node);
 }
 
 void link_change_handler(struct node *a_node, int linkid, int newcost) {
