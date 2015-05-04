@@ -1,0 +1,382 @@
+Enter TRACE:
+At time t=0.000, node_init() called on node 0.
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0    4   50
+   1| 9999    0 9999
+   2| 9999 9999    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    0    0
+At time t=0.000, node 0 sends packet to node 1 with: 0 4 50 
+At time t=0.000, node 0 sends packet to node 2 with: 0 4 50 
+
+At time t=0.000, node_init() called on node 1.
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0 9999 9999
+   1|    4    0    1
+   2| 9999 9999    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    0    1    0
+At time t=0.000, node 1 sends packet to node 0 with: 9999 0 9999 
+At time t=0.000, node 1 sends packet to node 2 with: 4 0 1 
+
+At time t=0.000, node_init() called on node 2.
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0 9999 9999
+   1| 9999    0 9999
+   2|   50    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    0    0    2
+At time t=0.000, node 2 sends packet to node 0 with: 9999 9999 0 
+At time t=0.000, node 2 sends packet to node 1 with: 50 1 0 
+
+At time t=0.947, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0    4   50
+   1| 9999    0 9999
+   2| 9999 9999    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=1.470, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0    4   50
+   1| 9999    0 9999
+   2| 9999 9999    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=1.642, recv_update() called. node 2 receives a packet from node 0
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0    4   50
+   1| 9999    0 9999
+   2|   50    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=1.871, recv_update() called. node 1 receives a packet from node 0
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0    4   50
+   1|    4    0    1
+   2| 9999 9999    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=2.634, recv_update() called. node 2 receives a packet from node 1
+At time t=2.634, node 2 sends packet to node 0 with: 5 1 0 
+At time t=2.634, node 2 sends packet to node 1 with: 9999 9999 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0    4   50
+   1|    4    0    1
+   2|    5    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=3.285, recv_update() called. node 1 receives a packet from node 2
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0    4   50
+   1|    4    0    1
+   2|   50    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=3.548, recv_update() called. node 1 receives a packet from node 2
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0    4   50
+   1|    4    0    1
+   2| 9999 9999    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=3.575, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0    4   50
+   1| 9999    0 9999
+   2|    5    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=10000.000, link_change_handler() called. Link cost between node 0 and node 1 changes to 60.
+At time t=10000.000, node 0 sends packet to node 1 with: 0 51 50 
+At time t=10000.000, node 0 sends packet to node 2 with: 0 9999 9999 
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1| 9999    0 9999
+   2|    5    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10000.000, link_change_handler() called. Link cost between node 1 and node 0 changes to 60.
+At time t=10000.000, node 1 sends packet to node 0 with: 9999 0 1 
+At time t=10000.000, node 1 sends packet to node 2 with: 60 0 9999 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0    4   50
+   1|   60    0    1
+   2| 9999 9999    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=10000.227, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1| 9999    0    1
+   2|    5    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10000.256, recv_update() called. node 2 receives a packet from node 0
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0 9999 9999
+   1|    4    0    1
+   2|    5    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10001.127, recv_update() called. node 2 receives a packet from node 1
+At time t=10001.127, node 2 sends packet to node 0 with: 9999 1 0 
+At time t=10001.127, node 2 sends packet to node 1 with: 50 9999 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0 9999 9999
+   1|   60    0 9999
+   2|   50    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=10001.697, recv_update() called. node 1 receives a packet from node 0
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   60    0    1
+   2| 9999 9999    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=10002.468, recv_update() called. node 1 receives a packet from node 2
+At time t=10002.468, node 1 sends packet to node 0 with: 51 0 1 
+At time t=10002.468, node 1 sends packet to node 2 with: 9999 0 9999 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   51    0    1
+   2|   50 9999    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10002.959, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1| 9999    0    1
+   2| 9999    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10003.025, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   51    0    1
+   2| 9999    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10003.351, recv_update() called. node 2 receives a packet from node 1
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0 9999 9999
+   1| 9999    0 9999
+   2|   50    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=20000.000, link_change_handler() called. Link cost between node 0 and node 1 changes to 4.
+At time t=20000.000, node 0 sends packet to node 1 with: 0 9999 9999 
+At time t=20000.000, node 0 sends packet to node 2 with: 0 4 5 
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0    4    5
+   1|   51    0    1
+   2| 9999    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    1    1
+
+At time t=20000.000, link_change_handler() called. Link cost between node 1 and node 0 changes to 4.
+At time t=20000.000, node 1 sends packet to node 0 with: 9999 0 1 
+At time t=20000.000, node 1 sends packet to node 2 with: 4 0 9999 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|    4    0    1
+   2|   50 9999    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=20000.105, recv_update() called. node 1 receives a packet from node 0
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0 9999 9999
+   1|    4    0    1
+   2|   50 9999    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=20000.859, recv_update() called. node 2 receives a packet from node 0
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0    4    5
+   1| 9999    0 9999
+   2|   50    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=20001.809, recv_update() called. node 2 receives a packet from node 1
+At time t=20001.809, node 2 sends packet to node 0 with: 5 1 0 
+At time t=20001.809, node 2 sends packet to node 1 with: 9999 9999 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0    4    5
+   1|    4    0 9999
+   2|    5    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=20001.873, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0    4    5
+   1| 9999    0    1
+   2| 9999    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    1    1
+
+At time t=20003.051, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0    4    5
+   1| 9999    0    1
+   2|    5    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    1    1
+
+At time t=20003.244, recv_update() called. node 1 receives a packet from node 2
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0 9999 9999
+   1|    4    0    1
+   2| 9999 9999    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    0    1    2
+
+Simulator terminated at t=20003.244141, no packets in medium
+
+---------------------------
+VERY VERY IMPORTANT NOTE!!!                  
+---------------------------
+Without poisoned reverse, algorithm converges at t=10047.909
+(for link cost increase from 4 to 60, see three_nodes_link_
+changes_no_poisoned_reverse.txt).
+With poisoned reverse, algorithm converges at t=10003.351 
+(for link cost increase from 4 to 60, see above). 
+By using poisoned reverse, 44.558 time units are saved.

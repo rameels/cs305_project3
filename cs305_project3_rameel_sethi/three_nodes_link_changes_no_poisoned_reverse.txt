@@ -1,0 +1,1542 @@
+Enter TRACE:
+At time t=0.000, node_init() called on node 0.
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0    4   50
+   1| 9999    0 9999
+   2| 9999 9999    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    0    0
+At time t=0.000, node 0 sends packet to node 1 with: 0 4 50 
+At time t=0.000, node 0 sends packet to node 2 with: 0 4 50 
+
+At time t=0.000, node_init() called on node 1.
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0 9999 9999
+   1|    4    0    1
+   2| 9999 9999    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    0    1    0
+At time t=0.000, node 1 sends packet to node 0 with: 4 0 1 
+At time t=0.000, node 1 sends packet to node 2 with: 4 0 1 
+
+At time t=0.000, node_init() called on node 2.
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0 9999 9999
+   1| 9999    0 9999
+   2|   50    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    0    0    2
+At time t=0.000, node 2 sends packet to node 0 with: 50 1 0 
+At time t=0.000, node 2 sends packet to node 1 with: 50 1 0 
+
+At time t=0.947, recv_update() called. node 0 receives a packet from node 1
+At time t=0.947, node 0 sends packet to node 1 with: 0 4 5 
+At time t=0.947, node 0 sends packet to node 2 with: 0 4 5 
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0    4    5
+   1|    4    0    1
+   2| 9999 9999    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    1    1
+
+At time t=1.470, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0    4    5
+   1|    4    0    1
+   2|   50    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    1    1
+
+At time t=1.642, recv_update() called. node 2 receives a packet from node 0
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0    4   50
+   1| 9999    0 9999
+   2|   50    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=1.871, recv_update() called. node 1 receives a packet from node 0
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0    4   50
+   1|    4    0    1
+   2| 9999 9999    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=2.634, recv_update() called. node 2 receives a packet from node 1
+At time t=2.634, node 2 sends packet to node 0 with: 5 1 0 
+At time t=2.634, node 2 sends packet to node 1 with: 5 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0    4   50
+   1|    4    0    1
+   2|    5    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=2.897, recv_update() called. node 2 receives a packet from node 0
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0    4    5
+   1|    4    0    1
+   2|    5    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=3.285, recv_update() called. node 1 receives a packet from node 2
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0    4   50
+   1|    4    0    1
+   2|   50    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=4.225, recv_update() called. node 1 receives a packet from node 0
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0    4    5
+   1|    4    0    1
+   2|   50    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=4.331, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0    4    5
+   1|    4    0    1
+   2|    5    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    1    1
+
+At time t=4.481, recv_update() called. node 1 receives a packet from node 2
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0    4    5
+   1|    4    0    1
+   2|    5    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=10000.000, link_change_handler() called. Link cost between node 0 and node 1 changes to 60.
+At time t=10000.000, node 0 sends packet to node 1 with: 0 51 50 
+At time t=10000.000, node 0 sends packet to node 2 with: 0 51 50 
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|    4    0    1
+   2|    5    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10000.000, link_change_handler() called. Link cost between node 1 and node 0 changes to 60.
+At time t=10000.000, node 1 sends packet to node 0 with: 6 0 1 
+At time t=10000.000, node 1 sends packet to node 2 with: 6 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0    4    5
+   1|    6    0    1
+   2|    5    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10000.227, recv_update() called. node 1 receives a packet from node 0
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|    6    0    1
+   2|    5    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10000.871, recv_update() called. node 2 receives a packet from node 0
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|    4    0    1
+   2|    5    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10001.642, recv_update() called. node 2 receives a packet from node 1
+At time t=10001.642, node 2 sends packet to node 0 with: 7 1 0 
+At time t=10001.642, node 2 sends packet to node 1 with: 7 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|    6    0    1
+   2|    7    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10001.832, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|    6    0    1
+   2|    5    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10001.898, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|    6    0    1
+   2|    7    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10002.524, recv_update() called. node 1 receives a packet from node 2
+At time t=10002.524, node 1 sends packet to node 0 with: 8 0 1 
+At time t=10002.524, node 1 sends packet to node 2 with: 8 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|    8    0    1
+   2|    7    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10002.631, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|    8    0    1
+   2|    7    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10003.383, recv_update() called. node 2 receives a packet from node 1
+At time t=10003.383, node 2 sends packet to node 0 with: 9 1 0 
+At time t=10003.383, node 2 sends packet to node 1 with: 9 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|    8    0    1
+   2|    9    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10004.332, recv_update() called. node 1 receives a packet from node 2
+At time t=10004.332, node 1 sends packet to node 0 with: 10 0 1 
+At time t=10004.332, node 1 sends packet to node 2 with: 10 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   10    0    1
+   2|    9    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10005.256, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|    8    0    1
+   2|    9    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10005.769, recv_update() called. node 2 receives a packet from node 1
+At time t=10005.769, node 2 sends packet to node 0 with: 11 1 0 
+At time t=10005.769, node 2 sends packet to node 1 with: 11 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   10    0    1
+   2|   11    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10006.434, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   10    0    1
+   2|    9    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10006.887, recv_update() called. node 1 receives a packet from node 2
+At time t=10006.887, node 1 sends packet to node 0 with: 12 0 1 
+At time t=10006.887, node 1 sends packet to node 2 with: 12 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   12    0    1
+   2|   11    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10007.146, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   10    0    1
+   2|   11    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10007.271, recv_update() called. node 2 receives a packet from node 1
+At time t=10007.271, node 2 sends packet to node 0 with: 13 1 0 
+At time t=10007.271, node 2 sends packet to node 1 with: 13 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   12    0    1
+   2|   13    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10007.952, recv_update() called. node 1 receives a packet from node 2
+At time t=10007.952, node 1 sends packet to node 0 with: 14 0 1 
+At time t=10007.952, node 1 sends packet to node 2 with: 14 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   14    0    1
+   2|   13    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10008.488, recv_update() called. node 2 receives a packet from node 1
+At time t=10008.488, node 2 sends packet to node 0 with: 15 1 0 
+At time t=10008.488, node 2 sends packet to node 1 with: 15 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   14    0    1
+   2|   15    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10008.662, recv_update() called. node 1 receives a packet from node 2
+At time t=10008.662, node 1 sends packet to node 0 with: 16 0 1 
+At time t=10008.662, node 1 sends packet to node 2 with: 16 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   16    0    1
+   2|   15    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10008.928, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   12    0    1
+   2|   11    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10010.406, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   12    0    1
+   2|   13    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10010.626, recv_update() called. node 2 receives a packet from node 1
+At time t=10010.626, node 2 sends packet to node 0 with: 17 1 0 
+At time t=10010.626, node 2 sends packet to node 1 with: 17 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   16    0    1
+   2|   17    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10010.710, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   14    0    1
+   2|   13    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10011.328, recv_update() called. node 1 receives a packet from node 2
+At time t=10011.328, node 1 sends packet to node 0 with: 18 0 1 
+At time t=10011.328, node 1 sends packet to node 2 with: 18 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   18    0    1
+   2|   17    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10011.435, recv_update() called. node 2 receives a packet from node 1
+At time t=10011.435, node 2 sends packet to node 0 with: 19 1 0 
+At time t=10011.435, node 2 sends packet to node 1 with: 19 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   18    0    1
+   2|   19    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10011.727, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   14    0    1
+   2|   15    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10011.904, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   16    0    1
+   2|   15    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10012.510, recv_update() called. node 1 receives a packet from node 2
+At time t=10012.510, node 1 sends packet to node 0 with: 20 0 1 
+At time t=10012.510, node 1 sends packet to node 2 with: 20 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   20    0    1
+   2|   19    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10013.070, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   16    0    1
+   2|   17    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10013.701, recv_update() called. node 2 receives a packet from node 1
+At time t=10013.701, node 2 sends packet to node 0 with: 21 1 0 
+At time t=10013.701, node 2 sends packet to node 1 with: 21 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   20    0    1
+   2|   21    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10013.896, recv_update() called. node 1 receives a packet from node 2
+At time t=10013.896, node 1 sends packet to node 0 with: 22 0 1 
+At time t=10013.896, node 1 sends packet to node 2 with: 22 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   22    0    1
+   2|   21    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10013.908, recv_update() called. node 2 receives a packet from node 1
+At time t=10013.908, node 2 sends packet to node 0 with: 23 1 0 
+At time t=10013.908, node 2 sends packet to node 1 with: 23 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   22    0    1
+   2|   23    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10013.977, recv_update() called. node 1 receives a packet from node 2
+At time t=10013.977, node 1 sends packet to node 0 with: 24 0 1 
+At time t=10013.977, node 1 sends packet to node 2 with: 24 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   24    0    1
+   2|   23    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10014.448, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   18    0    1
+   2|   17    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10014.927, recv_update() called. node 2 receives a packet from node 1
+At time t=10014.927, node 2 sends packet to node 0 with: 25 1 0 
+At time t=10014.927, node 2 sends packet to node 1 with: 25 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   24    0    1
+   2|   25    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10014.976, recv_update() called. node 1 receives a packet from node 2
+At time t=10014.976, node 1 sends packet to node 0 with: 26 0 1 
+At time t=10014.976, node 1 sends packet to node 2 with: 26 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   26    0    1
+   2|   25    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10015.413, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   18    0    1
+   2|   19    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10015.775, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   20    0    1
+   2|   19    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10016.705, recv_update() called. node 2 receives a packet from node 1
+At time t=10016.705, node 2 sends packet to node 0 with: 27 1 0 
+At time t=10016.705, node 2 sends packet to node 1 with: 27 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   26    0    1
+   2|   27    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10016.873, recv_update() called. node 1 receives a packet from node 2
+At time t=10016.873, node 1 sends packet to node 0 with: 28 0 1 
+At time t=10016.873, node 1 sends packet to node 2 with: 28 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   28    0    1
+   2|   27    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10017.519, recv_update() called. node 2 receives a packet from node 1
+At time t=10017.519, node 2 sends packet to node 0 with: 29 1 0 
+At time t=10017.519, node 2 sends packet to node 1 with: 29 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   28    0    1
+   2|   29    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10017.722, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   20    0    1
+   2|   21    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10017.936, recv_update() called. node 1 receives a packet from node 2
+At time t=10017.936, node 1 sends packet to node 0 with: 30 0 1 
+At time t=10017.936, node 1 sends packet to node 2 with: 30 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   30    0    1
+   2|   29    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10019.684, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   22    0    1
+   2|   21    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10019.802, recv_update() called. node 2 receives a packet from node 1
+At time t=10019.802, node 2 sends packet to node 0 with: 31 1 0 
+At time t=10019.802, node 2 sends packet to node 1 with: 31 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   30    0    1
+   2|   31    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10020.761, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   22    0    1
+   2|   23    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10021.161, recv_update() called. node 1 receives a packet from node 2
+At time t=10021.161, node 1 sends packet to node 0 with: 32 0 1 
+At time t=10021.161, node 1 sends packet to node 2 with: 32 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   32    0    1
+   2|   31    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10021.632, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   24    0    1
+   2|   23    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10022.649, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   24    0    1
+   2|   25    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10022.919, recv_update() called. node 2 receives a packet from node 1
+At time t=10022.919, node 2 sends packet to node 0 with: 33 1 0 
+At time t=10022.919, node 2 sends packet to node 1 with: 33 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   32    0    1
+   2|   33    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10023.035, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   26    0    1
+   2|   25    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10024.127, recv_update() called. node 1 receives a packet from node 2
+At time t=10024.127, node 1 sends packet to node 0 with: 34 0 1 
+At time t=10024.127, node 1 sends packet to node 2 with: 34 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   34    0    1
+   2|   33    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10024.202, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   26    0    1
+   2|   27    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10024.315, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   28    0    1
+   2|   27    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10025.153, recv_update() called. node 2 receives a packet from node 1
+At time t=10025.153, node 2 sends packet to node 0 with: 35 1 0 
+At time t=10025.153, node 2 sends packet to node 1 with: 35 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   34    0    1
+   2|   35    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10025.164, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   28    0    1
+   2|   29    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10025.381, recv_update() called. node 1 receives a packet from node 2
+At time t=10025.381, node 1 sends packet to node 0 with: 36 0 1 
+At time t=10025.381, node 1 sends packet to node 2 with: 36 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   36    0    1
+   2|   35    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10025.610, recv_update() called. node 2 receives a packet from node 1
+At time t=10025.610, node 2 sends packet to node 0 with: 37 1 0 
+At time t=10025.610, node 2 sends packet to node 1 with: 37 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   36    0    1
+   2|   37    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10025.789, recv_update() called. node 1 receives a packet from node 2
+At time t=10025.789, node 1 sends packet to node 0 with: 38 0 1 
+At time t=10025.789, node 1 sends packet to node 2 with: 38 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   38    0    1
+   2|   37    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10026.346, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   30    0    1
+   2|   29    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10026.938, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   30    0    1
+   2|   31    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10027.287, recv_update() called. node 2 receives a packet from node 1
+At time t=10027.287, node 2 sends packet to node 0 with: 39 1 0 
+At time t=10027.287, node 2 sends packet to node 1 with: 39 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   38    0    1
+   2|   39    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10028.401, recv_update() called. node 1 receives a packet from node 2
+At time t=10028.401, node 1 sends packet to node 0 with: 40 0 1 
+At time t=10028.401, node 1 sends packet to node 2 with: 40 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   40    0    1
+   2|   39    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10028.767, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   32    0    1
+   2|   31    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10028.828, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   32    0    1
+   2|   33    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10029.666, recv_update() called. node 2 receives a packet from node 1
+At time t=10029.666, node 2 sends packet to node 0 with: 41 1 0 
+At time t=10029.666, node 2 sends packet to node 1 with: 41 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   40    0    1
+   2|   41    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10030.500, recv_update() called. node 1 receives a packet from node 2
+At time t=10030.500, node 1 sends packet to node 0 with: 42 0 1 
+At time t=10030.500, node 1 sends packet to node 2 with: 42 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   42    0    1
+   2|   41    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10030.693, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   34    0    1
+   2|   33    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10030.829, recv_update() called. node 2 receives a packet from node 1
+At time t=10030.829, node 2 sends packet to node 0 with: 43 1 0 
+At time t=10030.829, node 2 sends packet to node 1 with: 43 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   42    0    1
+   2|   43    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10030.977, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   34    0    1
+   2|   35    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10031.194, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   36    0    1
+   2|   35    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10031.616, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   36    0    1
+   2|   37    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10031.858, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   38    0    1
+   2|   37    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10031.937, recv_update() called. node 1 receives a packet from node 2
+At time t=10031.937, node 1 sends packet to node 0 with: 44 0 1 
+At time t=10031.937, node 1 sends packet to node 2 with: 44 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   44    0    1
+   2|   43    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10032.105, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   38    0    1
+   2|   39    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10032.554, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   40    0    1
+   2|   39    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10033.717, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   40    0    1
+   2|   41    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10033.787, recv_update() called. node 2 receives a packet from node 1
+At time t=10033.787, node 2 sends packet to node 0 with: 45 1 0 
+At time t=10033.787, node 2 sends packet to node 1 with: 45 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   44    0    1
+   2|   45    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10033.943, recv_update() called. node 1 receives a packet from node 2
+At time t=10033.943, node 1 sends packet to node 0 with: 46 0 1 
+At time t=10033.943, node 1 sends packet to node 2 with: 46 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   46    0    1
+   2|   45    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10034.060, recv_update() called. node 2 receives a packet from node 1
+At time t=10034.060, node 2 sends packet to node 0 with: 47 1 0 
+At time t=10034.060, node 2 sends packet to node 1 with: 47 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   46    0    1
+   2|   47    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10034.711, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   42    0    1
+   2|   41    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10035.605, recv_update() called. node 1 receives a packet from node 2
+At time t=10035.605, node 1 sends packet to node 0 with: 48 0 1 
+At time t=10035.605, node 1 sends packet to node 2 with: 48 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   48    0    1
+   2|   47    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10035.713, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   42    0    1
+   2|   43    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10036.688, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   44    0    1
+   2|   43    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10037.184, recv_update() called. node 2 receives a packet from node 1
+At time t=10037.184, node 2 sends packet to node 0 with: 49 1 0 
+At time t=10037.184, node 2 sends packet to node 1 with: 49 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   48    0    1
+   2|   49    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=10038.212, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   44    0    1
+   2|   45    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10038.923, recv_update() called. node 1 receives a packet from node 2
+At time t=10038.923, node 1 sends packet to node 0 with: 50 0 1 
+At time t=10038.923, node 1 sends packet to node 2 with: 50 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   50    0    1
+   2|   49    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10039.929, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   46    0    1
+   2|   45    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10039.960, recv_update() called. node 2 receives a packet from node 1
+At time t=10039.960, node 2 sends packet to node 0 with: 50 1 0 
+At time t=10039.960, node 2 sends packet to node 1 with: 50 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   50    0    1
+   2|   50    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=10040.781, recv_update() called. node 1 receives a packet from node 2
+At time t=10040.781, node 1 sends packet to node 0 with: 51 0 1 
+At time t=10040.781, node 1 sends packet to node 2 with: 51 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   51    0    1
+   2|   50    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    2    1    2
+
+At time t=10041.169, recv_update() called. node 2 receives a packet from node 1
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   51    0    1
+   2|   50    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=10041.445, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   46    0    1
+   2|   47    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10043.319, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   48    0    1
+   2|   47    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10044.073, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   48    0    1
+   2|   49    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10044.678, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   50    0    1
+   2|   49    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10046.644, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   50    0    1
+   2|   50    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=10047.909, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|   51    0    1
+   2|   50    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    2    2
+
+At time t=20000.000, link_change_handler() called. Link cost between node 0 and node 1 changes to 4.
+At time t=20000.000, node 0 sends packet to node 1 with: 0 4 5 
+At time t=20000.000, node 0 sends packet to node 2 with: 0 4 5 
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0    4    5
+   1|   51    0    1
+   2|   50    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    1    1
+
+At time t=20000.000, link_change_handler() called. Link cost between node 1 and node 0 changes to 4.
+At time t=20000.000, node 1 sends packet to node 0 with: 4 0 1 
+At time t=20000.000, node 1 sends packet to node 2 with: 4 0 1 
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0   51   50
+   1|    4    0    1
+   2|   50    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=20001.000, recv_update() called. node 1 receives a packet from node 0
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0    4    5
+   1|    4    0    1
+   2|   50    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=20001.508, recv_update() called. node 2 receives a packet from node 0
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0    4    5
+   1|   51    0    1
+   2|   50    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=20001.887, recv_update() called. node 0 receives a packet from node 1
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0    4    5
+   1|    4    0    1
+   2|   50    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    1    1
+
+At time t=20002.756, recv_update() called. node 2 receives a packet from node 1
+At time t=20002.756, node 2 sends packet to node 0 with: 5 1 0 
+At time t=20002.756, node 2 sends packet to node 1 with: 5 1 0 
+         To
+ D2 |    0    1    2
+----|---------------
+   0|    0    4    5
+   1|    4    0    1
+   2|    5    1    0
+next hop table:
+ D2 |    0    1    2
+----|---------------
+    |    1    1    2
+
+At time t=20003.090, recv_update() called. node 1 receives a packet from node 2
+         To
+ D1 |    0    1    2
+----|---------------
+   0|    0    4    5
+   1|    4    0    1
+   2|    5    1    0
+next hop table:
+ D1 |    0    1    2
+----|---------------
+    |    0    1    2
+
+At time t=20003.377, recv_update() called. node 0 receives a packet from node 2
+         To
+ D0 |    0    1    2
+----|---------------
+   0|    0    4    5
+   1|    4    0    1
+   2|    5    1    0
+next hop table:
+ D0 |    0    1    2
+----|---------------
+    |    0    1    1
+
+Simulator terminated at t=20003.376953, no packets in medium
