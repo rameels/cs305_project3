@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "node.h"
-#define  LINKCHANGES 0
+#define  LINKCHANGES 2
 
 /* This structure represents a change that would happen to one of 
    the links at a certain time. */
@@ -14,23 +14,29 @@ struct link_change {
 	
 
 /* Four node network without link changes */
-int connectcosts[NUMOFNODES][NUMOFNODES] = {{0,1,3,7},
-											{1,0,1,INFINITY},
-											{3,1,0,2},
-											{7,INFINITY,2,0}};
+// int connectcosts[NUMOFNODES][NUMOFNODES] =  {
+// 										   		{0, 1, 3, 7},
+// 												{1, 0, 1, INFINITY},
+// 												{3, 1, 0, 2},
+// 												{7, INFINITY, 2, 0}
+// 											};
 
-struct link_change changes[LINKCHANGES] = {};
+// struct link_change changes[LINKCHANGES] = {};
 
 /* Three node network with link changes */
 
 /* the array of link costs */
-/* int connectcosts[NUMOFNODES][NUMOFNODES]={{0,4,50},
-											 {4,0,1},
-											 {50,1,0}}; */
+int connectcosts[NUMOFNODES][NUMOFNODES] =  {
+ 										    	{ 0, 4, 50},
+										    	{ 4, 0,  1},
+										    	{50, 1,  0}
+										  	}; 
 
 /* the array of link changes */
-/* struct link_change changes[LINKCHANGES]={{10000,0,1,60}, 
-											{20000,0,1,4}}; */
+struct link_change changes[LINKCHANGES]  =  {
+ 	                                        	{10000, 0, 1, 60}, 
+										    	{20000, 0, 1, 4 }
+											}; 
 
 
 /* ******************************************************************

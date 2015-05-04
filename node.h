@@ -1,9 +1,9 @@
-#define INFINITY           9999 /* a number to represent infinity */
-#define NUMOFNODES         4    /* number of nodes in the graph. 
+#define INFINITY            9999 /* a number to represent infinity */
+#define NUMOFNODES          3    /* number of nodes in the graph. 
 								   Note that if you change this you should 
 								   also change connectcosts initialization 
 								   in dv_routing.c */
-#define USEPOISONEDREVERSE 0    /* should we use poisoned reverse? */
+#define USEPOISONEDREVERSE  0    /* should we use poisoned reverse? */
 
 /* a structure to represent the pkt being sent */ 
 struct rtpkt {	
@@ -63,6 +63,13 @@ void link_change_handler(struct node *a_node, int linkid, int newcost);
    project description for more information. */
 void tolayer2(struct rtpkt packet);
 
+/* this function executes the distance vector algorithm for the 
+   given node and advertises any updates to its neighbors */
+void dv_algorithm(struct node *a_node);
+
+/* this function sends a node's distance vector to its neighbors */
+void send_dv(struct node *a_node);
+
 /* prints out the node's distance table and next hop tables */
 void print_node_state(struct node *a_node);
 
@@ -73,7 +80,7 @@ void print_node_init(int n);
 void print_recv_update(struct rtpkt *rcvdpkt);
 
 /* prints out time, nodes and new cost of link_change_handler() call */
-void print_link_change_handler(struct node *a_node);
+void print_link_change_handler(int nodenumber, int linkid, int newcost);
 
 /* prints out source, destination and distance vector of tolayer2() call */
 void print_tolayer2(struct rtpkt pkt);
