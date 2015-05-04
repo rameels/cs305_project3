@@ -3,7 +3,7 @@
 								   Note that if you change this you should 
 								   also change connectcosts initialization 
 								   in dv_routing.c */
-#define USEPOISONEDREVERSE  0    /* should we use poisoned reverse? */
+#define USEPOISONEDREVERSE  1    /* should we use poisoned reverse? */
 
 /* a structure to represent the pkt being sent */ 
 struct rtpkt {	

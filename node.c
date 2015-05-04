@@ -53,6 +53,7 @@ void recv_update(struct node *a_node, struct rtpkt *rcvdpkt) {
 void link_change_handler(struct node *a_node, int linkid, int newcost) {
     print_link_change_handler(a_node->node_number, linkid, newcost);
     a_node->cost_to_neighbors[linkid] = newcost;
+    //a_node->distance_table[a_node->node_number][linkid] = INFINITY;
     dv_algorithm(a_node);
 }
 
@@ -66,11 +67,14 @@ void dv_algorithm(struct node *a_node) {
     }
     for(i = 0; i < NUMOFNODES; i++) {
         min = INFINITY;
+        if(a_node->node_number == i) {
+            continue;
+        }
         for(j = 0; j < NUMOFNODES; j++) {
-            printf("%d %d %d\n",
-                   a_node->cost_to_neighbors[j],
-                   a_node->distance_table[j][i],
-                   min);
+            if(a_node->cost_to_neighbors[j] == INFINITY ||
+               a_node->cost_to_neighbors[j] == 0) {
+                continue;
+            }
             if(a_node->cost_to_neighbors[j] +
                a_node->distance_table[j][i] < min) {
                 min = a_node->cost_to_neighbors[j] + 
@@ -100,14 +104,18 @@ void dv_algorithm(struct node *a_node) {
 }
 
 void send_dv(struct node *a_node) {
-    int i;
+    int i, j;
     struct rtpkt pkt;
     pkt.sourceid = a_node->node_number;
-    for(i = 0; i < NUMOFNODES; i++) {
-        pkt.mincost[i] = a_node->spath[i];
-    }
     for(i = 0; i < NUMOFNODES; i++) {    
         pkt.destid = i;
+        for(j = 0; j < NUMOFNODES; j++) {
+            if(USEPOISONEDREVERSE && a_node->next_hop[j] == i) {
+                pkt.mincost[j] = INFINITY;
+            } else {
+                pkt.mincost[j] = a_node->spath[j];
+            } 
+        }
         if(i != a_node->node_number && 
            a_node->cost_to_neighbors[i] != INFINITY) {
             print_tolayer2(pkt);
